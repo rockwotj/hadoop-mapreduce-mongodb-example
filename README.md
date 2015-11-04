@@ -1,6 +1,10 @@
-## Hadoop Map-Reduce Example in Java
+## Hadoop Map-Reduce 2 MongoDB Example in Java
 
-**Get up and running in less than 5 minutes**
+This is the starting code example of loading data from HDFS, doing some processing on it, then outputting to MongoDB. The slides are [here](https://docs.google.com/presentation/d/1QxyFHr4-Er5ge9x6ZrkAABjh0AB1WxT7X-S8cDyzyDE/edit?usp=sharing) for the lesson.
+
+Thanks to [umermansoor](https://github.com/umermansoor) for the starting code. 
+
+## Run the Starting Code
 
 ### Overview
 This program demonstrates Hadoop's Map-Reduce concept in Java using a very simple example. The input is raw data files listing earthquakes by region, magnitude and other information. 
