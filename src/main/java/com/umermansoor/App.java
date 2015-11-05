@@ -26,7 +26,7 @@ public class App extends Configured implements Tool
      * @throws Exception - Bad idea but produces less cluttered code.
      */
     public int run(String[] args) throws Exception {
-        if (args.length != 1) {
+        if (args.length != 2) {
             System.err.println("Usage: <input path> <output mongourl>");
             return 1;
         }
