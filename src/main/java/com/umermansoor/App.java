@@ -43,6 +43,10 @@ public class App extends Configured implements Tool
         job.setMapperClass(EarthquakeMapper.class);
         job.setReducerClass(EarthquakeReducer.class);
 
+	//Specify the type of mapper output keys and values
+        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputValueClass(DoubleWritable.class);
+
         // Specify the type of output keys and values
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(DoubleWritable.class);
