@@ -36,9 +36,7 @@ public class EarthquakeReducer extends
             maxMagnitude = Math.max(maxMagnitude, value.get());
         }
         
-        BSONObject output = new BasicBSONObject();
-        output.put("max_mag", maxMagnitude);
-        
+        BSONObject output = new BasicBSONObject("max_mag", maxMagnitude);
         context.write(key, new BSONWritable(output));
     }
 }
