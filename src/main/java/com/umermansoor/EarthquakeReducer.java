@@ -2,13 +2,18 @@ package com.umermansoor;
 
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.mapreduce.Reducer;
+import org.bson.BSONObject;
+import org.bson.BasicBSONObject;
+
+import com.mongodb.hadoop.io.BSONWritable;
+
 import java.io.IOException;
 import org.apache.hadoop.io.Text;
 
 
 
 public class EarthquakeReducer extends 
-        Reducer<Text, DoubleWritable, Text, DoubleWritable> 
+        Reducer<Text, DoubleWritable, Text, BSONWritable> 
 {
 
     /**
@@ -31,6 +36,9 @@ public class EarthquakeReducer extends
             maxMagnitude = Math.max(maxMagnitude, value.get());
         }
         
-        context.write(key, new DoubleWritable(maxMagnitude));
+        BSONObject output = new BasicBSONObject();
+        output.put("max_mag", maxMagnitude);
+        
+        context.write(key, new BSONWritable(output));
     }
 }
